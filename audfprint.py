@@ -489,7 +489,7 @@ def main(argv):
     elapsedtime = time_clock() - initticks
     if analyzer and analyzer.soundfiletotaldur > 0.:
         print("Processed "
-              + "%d files (%.1f s total dur) in %.1f s sec = %.3f x RT" \
+              + "%d files (%.1f s total dur) in %.1f sec = %.3f x RT" \
               % (analyzer.soundfilecount, analyzer.soundfiletotaldur,
                  elapsedtime, (elapsedtime / analyzer.soundfiletotaldur)))
 
