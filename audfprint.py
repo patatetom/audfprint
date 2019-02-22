@@ -179,10 +179,11 @@ def do_cmd(cmd, analyzer, hash_tab, filename_iter, matcher, outdir, type, report
             dur, nhash = analyzer.ingest(hash_tab, filename)
             tothashes += nhash
             ix += 1
+        if analyzer.soundfiletotaldur:
+            report(["Added " + str(tothashes) + " hashes "
+                    + "(%.1f" % (tothashes / float(analyzer.soundfiletotaldur))
+                    + " hashes/sec)"])
 
-        report(["Added " + str(tothashes) + " hashes "
-                + "(%.1f" % (tothashes / float(analyzer.soundfiletotaldur))
-                + " hashes/sec)"])
     elif cmd == 'remove':
         # Removing files from hash table.
         for filename in filename_iter:
